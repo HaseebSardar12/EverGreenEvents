@@ -22,10 +22,11 @@
                 android:id="@+id/tvLogo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/amiri"
+                android:fontFamily="serif"
                 android:gravity="center"
                 android:text="@string/evergreen_events"
-                android:textSize="44sp"
+                android:textSize="36sp"
+                android:layout_marginTop="10dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -33,11 +34,11 @@
 
             <ImageView
                 android:id="@+id/ivNavButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/nav_button_white"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_menu"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvLogo"/>
 
@@ -80,11 +81,13 @@
 
             <Button
                 android:id="@+id/btnBookVenue"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Book Venue"
                 android:layout_marginTop="20dp"
                 android:textSize="18sp"
+                android:layout_marginHorizontal="10dp"
+                android:backgroundTint="#147C18"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvDescription" />
@@ -129,6 +132,7 @@
                     android:layout_margin="8dp">
 
                     <TextView
+                        android:id="@+id/tvOwnerName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Owner Name"
@@ -136,12 +140,14 @@
                         android:textSize="18sp"/>
 
                     <TextView
+                        android:id="@+id/tvYearsInBusiness"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Years in Business"
                         android:textSize="12sp"/>
 
                     <TextView
+                        android:id="@+id/tvOwnerContact"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Phone Number"
@@ -158,9 +164,10 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#E1FFFFFF"
+        android:layout_marginTop="90dp"
         app:itemTextColor="@color/black"
+        android:background="#E1FFFFFF"
         app:menu="@menu/drawer_menu"
-        app:headerLayout="@layout/nav_header"/>
+        app:headerLayout="@layout/nav_header" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

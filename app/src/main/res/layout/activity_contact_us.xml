@@ -12,15 +12,9 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg">
+        >
 
-        <View
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#AB000000"
-            tools:layout_editor_absoluteX="-60dp"
-            tools:layout_editor_absoluteY="0dp" />
+
 
         <ScrollView
             android:id="@+id/scrollView"
@@ -42,12 +36,12 @@
                     android:id="@+id/tvLogo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/amiri"
+                    android:fontFamily="serif"
                     android:gravity="center"
                     android:text="@string/evergreen_events"
-                    android:textSize="44sp"
+                    android:textSize="36sp"
+                    android:layout_marginTop="20dp"
                     android:textStyle="bold"
-                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -62,18 +56,17 @@
                     android:textSize="24sp"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvLogo" />
 
                 <ImageView
                     android:id="@+id/ivNavButton"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="5dp"
-                    android:src="@drawable/nav_button_white"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_menu"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvContactUs" />
 
@@ -94,8 +87,6 @@
                         android:hint="Full Name"
                         android:drawableLeft="@drawable/ic_name"
                         android:drawablePadding="10dp"
-                        android:textColor="@color/white"
-                        app:hintTextColor="@color/white"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -116,8 +107,6 @@
                         android:hint="Email Address"
                         android:drawableLeft="@drawable/icon_email"
                         android:drawablePadding="10dp"
-                        android:textColor="@color/white"
-                        app:hintTextColor="@color/white"
                         android:inputType="textEmailAddress" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -138,8 +127,6 @@
                         android:hint="Phone Number"
                         android:drawableLeft="@drawable/ic_phone"
                         android:drawablePadding="10dp"
-                        android:textColor="@color/white"
-                        app:hintTextColor="@color/white"
                         android:inputType="phone" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -160,8 +147,6 @@
                         android:hint="Event Type"
                         android:drawableLeft="@drawable/ic_create"
                         android:drawablePadding="10dp"
-                        android:textColor="@color/white"
-                        app:hintTextColor="@color/white"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -182,8 +167,6 @@
                         android:hint="Event Budget (-/Rs)"
                         android:drawableLeft="@drawable/ic_currency"
                         android:drawablePadding="10dp"
-                        android:textColor="@color/white"
-                        app:hintTextColor="@color/white"
                         android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -204,8 +187,6 @@
                         android:hint="Event Date (DD/MM/YYYY)"
                         android:drawableLeft="@drawable/ic_date"
                         android:drawablePadding="10dp"
-                        android:textColor="@color/white"
-                        app:hintTextColor="@color/white"
                         android:inputType="date" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -226,8 +207,6 @@
                         android:hint="Event Location"
                         android:drawableLeft="@drawable/ic_location"
                         android:drawablePadding="10dp"
-                        android:textColor="@color/white"
-                        app:hintTextColor="@color/white"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -248,8 +227,6 @@
                         android:drawableLeft="@drawable/ic_person"
                         android:drawablePadding="10dp"
                         android:hint="Number of Guests"
-                        android:textColor="@color/white"
-                        app:hintTextColor="@color/white"
                         android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -270,8 +247,6 @@
                         android:hint="How did you hear about us?"
                         android:drawableLeft="@drawable/ic_hear"
                         android:drawablePadding="10dp"
-                        android:textColor="@color/white"
-                        app:hintTextColor="@color/white"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -283,6 +258,7 @@
                     android:textSize="18sp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="20dp"
+                    android:backgroundTint="#147C18"
                     app:layout_constraintTop_toBottomOf="@id/textInputLayout8"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -296,9 +272,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:layout_marginTop="180dp"
-        android:background="#E1FFFFFF"
+        android:layout_marginTop="90dp"
         app:itemTextColor="@color/black"
+        android:background="#E1FFFFFF"
         app:menu="@menu/drawer_menu"
         app:headerLayout="@layout/nav_header" />
 

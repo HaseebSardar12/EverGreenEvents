@@ -17,12 +17,12 @@
         android:id="@+id/tvLogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/amiri"
+        android:fontFamily="serif"
         android:gravity="center"
         android:text="@string/evergreen_events"
-        android:textSize="44sp"
+        android:textSize="36sp"
+        android:layout_marginTop="10dp"
         android:textStyle="bold"
-        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +37,6 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvLogo" />
@@ -57,11 +56,11 @@
 
     <ImageView
         android:id="@+id/ivNavButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="5dp"
-        android:src="@drawable/nav_button_white"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/svSearch" />
 
@@ -81,10 +80,10 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:layout_marginTop="210dp"
-        android:background="#E1FFFFFF"
+        android:layout_marginTop="90dp"
         app:itemTextColor="@color/black"
+        android:background="#E1FFFFFF"
         app:menu="@menu/drawer_menu"
-        app:headerLayout="@layout/nav_header"/>
+        app:headerLayout="@layout/nav_header" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -25,7 +25,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class VenueDetails extends AppCompatActivity {
-    TextView tvVenueName, tvDescription;
+    TextView tvVenueName, tvDescription, tvOwnerName, tvYearsInBusiness, tvOwnerContact;
     ImageView ivVenueImage;
     Button btnBookVenue;
     FirebaseAuth auth;
@@ -47,6 +47,9 @@ public class VenueDetails extends AppCompatActivity {
         btnBookVenue = findViewById(R.id.btnBookVenue);
         ivNav = findViewById(R.id.ivNavButton);
         drawerLayout = findViewById(R.id.drawer_layout);
+        tvOwnerName = findViewById(R.id.tvOwnerName);
+        tvYearsInBusiness = findViewById(R.id.tvYearsInBusiness);
+        tvOwnerContact = findViewById(R.id.tvOwnerContact);
 
         reference = FirebaseDatabase.getInstance().getReference();
         auth = FirebaseAuth.getInstance();
@@ -113,10 +116,16 @@ public class VenueDetails extends AppCompatActivity {
 
         String venueName = getIntent().getStringExtra("venue_name");
         String venueDesc = getIntent().getStringExtra("venue_description");
+        String ownerName = getIntent().getStringExtra("owner_name");
+        String yearsInBusiness = getIntent().getStringExtra("years_in_business");
+        String ownerContact = getIntent().getStringExtra("owner_contact");
         int venueImageResId = getIntent().getIntExtra("venue_image", -1);
 
         tvVenueName.setText(venueName);
         tvDescription.setText(venueDesc);
+        tvOwnerName.setText(ownerName);
+        tvYearsInBusiness.setText(yearsInBusiness);
+        tvOwnerContact.setText(ownerContact);
         Glide.with(this).load(venueImageResId).into(ivVenueImage);
 
 

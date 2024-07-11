@@ -48,6 +48,9 @@ public class VenuesAdapter extends RecyclerView.Adapter<VenuesAdapter.ViewHolder
             intent.putExtra("venue_name", singleVenue.getVenueName());
             intent.putExtra("venue_image", singleVenue.getImage());
             intent.putExtra("venue_description", singleVenue.getVenueDescription());
+            intent.putExtra("owner_name", singleVenue.getOwnerName());
+            intent.putExtra("years_in_business", singleVenue.getYearsInBusiness());
+            intent.putExtra("owner_contact", singleVenue.getOwnerContact());
             context.startActivity(intent);
         });
     }

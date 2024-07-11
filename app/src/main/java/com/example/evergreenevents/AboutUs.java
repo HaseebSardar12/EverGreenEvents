@@ -2,11 +2,13 @@ package com.example.evergreenevents;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -33,6 +35,7 @@ public class AboutUs extends AppCompatActivity {
     FirebaseUser user;
     DatabaseReference reference;
     TextView navEmail;
+    ViewFlipper viewFlipper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,7 @@ public class AboutUs extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference();
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
+        viewFlipper = findViewById(R.id.viewFlipper);
 
         btnGetInTouch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,8 +85,6 @@ public class AboutUs extends AppCompatActivity {
                     startActivity(new Intent(AboutUs.this, Venues.class));
                 } else if (id == R.id.nav_ContactUs) {
                     startActivity(new Intent(AboutUs.this, ContactUs.class));
-                }else if (id == R.id.nav_home) {
-                    startActivity(new Intent(AboutUs.this, Dashboard.class));
                 }else if (id == R.id.nav_VenueBooking) {
                     startActivity(new Intent(AboutUs.this, Venue_Booking.class));
                 }else if (id == R.id.nav_LogOut) {
@@ -105,6 +107,18 @@ public class AboutUs extends AppCompatActivity {
         {
             navEmail.setText(user.getEmail());
         }
+
+        int[] images = {R.drawable.venue4, R.drawable.venu1, R.drawable.venue3, R.drawable.venu5, R.drawable.venue0, R.drawable.venue2};
+        LayoutInflater inflater = getLayoutInflater();
+
+        for (int i = 0; i < images.length; i++) {
+            View flipperItem = inflater.inflate(R.layout.flipper_item, null);
+            ImageView imageView = flipperItem.findViewById(R.id.flipper_image);
+            imageView.setBackgroundResource(images[i]);
+            viewFlipper.addView(flipperItem);
+        }
+        viewFlipper.setFlipInterval(1000);
+        viewFlipper.setAutoStart(true);
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

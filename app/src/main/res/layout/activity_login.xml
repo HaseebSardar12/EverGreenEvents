@@ -4,15 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
     tools:context=".Login">
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#AB000000"
-        tools:layout_editor_absoluteX="-60dp"
-        tools:layout_editor_absoluteY="0dp" />
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -34,7 +27,6 @@
                 android:text="@string/evergreen_events"
                 android:textSize="44sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -49,7 +41,6 @@
                 android:fontFamily="serif"
                 android:textSize="36sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvLogo" />
@@ -71,9 +62,7 @@
                     android:layout_height="match_parent"
                     android:drawableLeft="@drawable/icon_email"
                     android:drawablePadding="10dp"
-                    android:textColor="@color/white"
                     android:hint="Enter Email"
-                    android:textColorHint="@color/white"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,8 +84,6 @@
                     android:hint="Enter Password"
                     android:drawableLeft="@drawable/icon_security"
                     android:drawablePadding="10dp"
-                    android:textColor="@color/white"
-                    app:hintTextColor="@color/white"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -161,6 +148,7 @@
                 android:fontFamily="serif"
                 android:text="Sign In"
                 android:textSize="17sp"
+                android:backgroundTint="#147C18"
                 app:boxStrokeColor="#17B61E"
                 app:boxStrokeWidth="1dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -194,7 +182,6 @@
             android:layout_height="wrap_content"
             android:text="Not a Member?"
             android:layout_marginBottom="20dp"
-            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/tvRegister"
             app:layout_constraintHorizontal_bias="0.807"
